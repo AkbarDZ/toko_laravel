@@ -34,7 +34,13 @@ Route::delete('foto-produk/{id}', [ProdukController::class, 'destroyFoto'])->nam
 // Route untuk laporan produk
 Route::get('backend/laporan/formproduk', [ProdukController::class, 'formProduk'])->name('backend.laporan.formproduk')->middleware('auth');
 Route::post('backend/laporan/cetakproduk', [ProdukController::class, 'cetakProduk'])->name('backend.laporan.cetakproduk')->middleware('auth');
+
+
+
+Route::resource('backend/customer', CustomerController::class, ['as' => 'backend'])->middleware('auth'); 
 // Frontend
+
+
 Route::get('/beranda', [BerandaController::class, 'index'])->name('beranda');
 
 Route::get('/produk/detail/{id}', [ProdukController::class, 'detail'])->name('produk.detail'); 
