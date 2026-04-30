@@ -40,6 +40,16 @@ Route::post('backend/laporan/cetakproduk', [ProdukController::class, 'cetakProdu
 Route::resource('backend/customer', CustomerController::class, ['as' => 'backend'])->middleware('auth'); 
 // Frontend
 
+Route::middleware('isCustomer')->group(function () { 
+// Route untuk menampilkan halaman akun customer 
+Route::get('/customer/akun/{id}', [CustomerController::class, 'akun']) ->name('customer.akun'); 
+// Route untuk mengupdate data akun customer 
+Route::put('/customer/updateakun/{id}', [CustomerController::class, 'updateAkun']) ->name('customer.updateakun'); 
+}); 
+
+// Route::get('/customer/akun/{id}', [CustomerController::class, 'akun'])->name('customer.akun')->middleware('is.customer'); 
+// Route::put('/customer/akun/{id}/update', [CustomerController::class, 'updateAkun'])->name('customer.akun.update')->middleware('is.customer'); 
+
 
 Route::get('/beranda', [BerandaController::class, 'index'])->name('beranda');
 

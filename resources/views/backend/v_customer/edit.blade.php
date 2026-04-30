@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                    <form action="#" method="post">
+                    <form action="{{ route('customer.updateakun', $edit->id) }}" method="post">
                         @method('put')
                         @csrf
                         <div class="card-body">

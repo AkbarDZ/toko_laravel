@@ -28,8 +28,6 @@
                                     <td> {{ $row->user->email }} </td>
                                     <td>
                                         <a href="#" title="Ubah Data">
-
-
                                             <button type="button" class="btn btn-warning btn-sm"><i
                                                     class="fas fa-eye"></i> Detail</button>
                                         </a>
